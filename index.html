@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+    <div class="weather-app">
+        <div class="container">
+            <form id="cityChange">
+                <input type="search" placeholder="Where are you going?" id="placeGo" />
+                <button class="Go" type="submit">GO!</button>
+                <button class="location" id="current-location" type="click">📍</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <img src="img/astronaut-flag.png" alt="astronaut" width="130" />
+                </div>
+                <div class="col-4">
+                    <div class="current-city" id="newCity">
+                        <h3>
+                            Roma
+                        </h3>
+                    </div>
+                    <ul>
+                        <div class="current-day" id="daytime">
+                            <li>
+                                Thursday 18:26
+                            </li>
+                        </div>
+                        <span class="current-temperature" id="grades">23
+                        </span>
+                        <span class="celsius">°C
+                        </span>
+                    </ul>
+                </div>
+
+                <div class="col-4">
+                    <div class="current-symbol">
+                        <img src="img/cloudy-sun.jpg" alt="cloudy-sun" width="100" />
+                    </div>
+                    <div class="prep-wind">
+                        <li>
+                            Wind:<span id="wind"> 31 </span> km/h
+                        </li>
+                        <li>
+                            Humidity: <span id="humidity"> 31 </span> %
+                        </li>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="Days">
+                <div class="row">
+
+                    <div class="col-2">
+                        <div class="card" style="width: 7rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Fri</h5>
+                                <div class="symbol">
+                                    <img src="img/sun.jpg" alt="sun" width="60" />
+                                </div>
+                                <p class="card-text">21°
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" style="width: 7rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Sat</h5>
+                                <div class="symbol">
+                                    <img src="img/sun.jpg" alt="sun" width="60" />
+                                </div>
+                                <p class="card-text">22°
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" style="width: 7rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Sun</h5>
+                                <div class="symbol">
+                                    <img src="img/rain.jpg" alt="rain" width="60" />
+                                </div>
+                                <p class="card-text">21°
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" style="width: 7rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Mon</h5>
+                                <div class="symbol">
+                                    <img src="img/rain.jpg" alt="rain" width="60" />
+                                </div>
+                                <p class="card-text">20°
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" style="width: 7rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Tue</h5>
+                                <div class="symbol">
+                                    <img src="img/rain.jpg" alt="rain" width="60" />
+                                </div>
+                                <p class="card-text">21°
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="src/index.js"></script>
+</body>
+
+</html>

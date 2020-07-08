@@ -1,0 +1,92 @@
+.weather-app {
+  border: 10px double #3b6978;
+  padding: 25px 0 25px 30px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 20px;
+}
+
+input {
+  padding: 5px 60px;
+  border-radius: 5%;
+  background: #ffffff;
+  border: 5px solid #84a9ac;
+  color: #393e46;
+  margin-bottom: 50px;
+}
+
+button {
+  padding: 5px 20px;
+  border-radius: 10%;
+  background: #84a9ac;
+  border: 5px solid #84a9ac;
+  transition: all 200ms ease-in-out;
+  color: #393e46;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+button:hover {
+  background: #ffffff;
+  color: #3b6978;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  font-family: "Varela Round", sans-serif;
+  list-style: none;
+}
+
+.current-city {
+  color: #3b6978;
+  font-weight: 500;
+  font-size: 30px;
+}
+.current-day {
+  color: #3b6978;
+}
+
+.current-temperature {
+  font-size: 30px;
+  color: #888888;
+  font-weight: 200px;
+  line-height: 2.5;
+}
+
+.celsius {
+  position: relative;
+  top: -15px;
+  color: #888888;
+}
+
+.prep-wind {
+  font-size: 17px;
+  list-style: none;
+  font-family: "Varela Round", sans-serif;
+  color: #888888;
+}
+
+.current-symbol {
+  margin-right: 30px;
+  margin-top: -30px;
+}
+
+.card {
+  display: block;
+  margin-right: 20px 20px;
+  border: 2px solid #84a9ac;
+  margin-top: 30px;
+  padding: 5px;
+}
+h5 {
+  color: #3b6978;
+  text-align: center;
+  font-family: "Varela Round", sans-serif;
+}
+p {
+  color: #3b6978;
+  text-align: center;
+  margin-top: 10px;
+  font-family: "Varela Round", sans-serif;
+}
