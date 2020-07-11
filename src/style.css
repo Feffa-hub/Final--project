@@ -48,10 +48,10 @@ ul {
 }
 
 .current-temperature {
-  font-size: 30px;
+  font-size: 40px;
   color: #888888;
   font-weight: 200px;
-  line-height: 2.5;
+  line-height: 2;
 }
 
 .celsius {
