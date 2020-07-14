@@ -41,7 +41,7 @@ ul {
 .current-city {
   color: #3b6978;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 35px;
 }
 .current-day {
   color: #3b6978;
@@ -51,7 +51,7 @@ ul {
   font-size: 40px;
   color: #888888;
   font-weight: 200px;
-  line-height: 2;
+  line-height: 2.1;
 }
 
 .celsius {
@@ -65,6 +65,7 @@ ul {
   list-style: none;
   font-family: "Varela Round", sans-serif;
   color: #888888;
+  line-height: 2;
 }
 
 .current-symbol {
