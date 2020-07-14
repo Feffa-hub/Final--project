@@ -24,6 +24,12 @@ daytime.innerHTML = `${day} ${hour}:${minutes}`;
 //Get current temperature
 
 function displayTemp(response) {
+  let iconElement = document.querySelector("#icon-now");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   document.querySelector("#newCity").innerHTML = response.data.name;
   document.querySelector("#grades").innerHTML = Math.round(
     response.data.main.temp
