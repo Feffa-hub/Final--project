@@ -8,6 +8,17 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
+function buildHours(timestamp) {
+  let now = new Date(timestamp);
+
+  let hour = now.getHours();
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hour}:${minutes}`;
+}
+
 let dayList = [
   "Sunday",
   "Monday",
@@ -42,6 +53,91 @@ function displayTemp(response) {
   );
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecast = response.data.list[0];
+
+  forecastElement.innerHTML = `
+  <div class="col-2">
+  <h5>${buildHours(forecast.dt_txt)}</h5>
+  <div class="symbol">
+  <img src="http://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png"width="80" />
+  </div>
+  <p class="card-text"><strong>${Math.round(
+    forecast.main.temp_max
+  )}° </strong>${Math.round(forecast.main.temp_min)}°
+  </p>
+  </div>
+  `;
+
+  forecast = response.data.list[1];
+  forecastElement.innerHTML += `
+  <div class="col-2">
+  <h5>${buildHours(forecast.dt_txt)}</h5>
+  <div class="symbol">
+  <img src="http://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png"width="80" />
+  </div>
+  <p class="card-text"><strong>${Math.round(
+    forecast.main.temp_max
+  )}° </strong>${Math.round(forecast.main.temp_min)}°
+  </p>
+  </div>
+  `;
+
+  forecast = response.data.list[2];
+  forecastElement.innerHTML += `
+  <div class="col-2">
+  <h5>${buildHours(forecast.dt_txt)}</h5>
+  <div class="symbol">
+  <img src="http://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png"width="80" />
+  </div>
+  <p class="card-text"><strong>${Math.round(
+    forecast.main.temp_max
+  )}° </strong>${Math.round(forecast.main.temp_min)}°
+  </p>
+  </div>
+  `;
+
+  forecast = response.data.list[3];
+  forecastElement.innerHTML += `
+  <div class="col-2">
+  <h5>${buildHours(forecast.dt_txt)}</h5>
+  <div class="symbol">
+  <img src="http://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png"width="80" />
+  </div>
+  <p class="card-text"><strong>${Math.round(
+    forecast.main.temp_max
+  )}° </strong>${Math.round(forecast.main.temp_min)}°
+  </p>
+  </div>
+  `;
+
+  forecast = response.data.list[4];
+  forecastElement.innerHTML += `
+  <div class="col-2">
+  <h5>${buildHours(forecast.dt_txt)}</h5>
+  <div class="symbol">
+  <img src="http://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png"width="80" />
+  </div>
+  <p class="card-text"><strong>${Math.round(
+    forecast.main.temp_max
+  )}° </strong>${Math.round(forecast.main.temp_min)}°
+  </p>
+  </div>
+  `;
+}
+
 function travel(event) {
   event.preventDefault();
 
@@ -50,6 +146,10 @@ function travel(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityTemp}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemp);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityTemp}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 let change = document.querySelector("#cityChange");
