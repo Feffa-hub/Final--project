@@ -1,6 +1,6 @@
 .weather-app {
-  border: 10px double #3b6978;
-  padding: 25px 0 25px 70px;
+  border: 5px solid #363062;
+  padding: 20px 0 20px 60px;
   margin: 20px auto;
   max-width: 800px;
   border-radius: 20px;
@@ -51,7 +51,7 @@ ul {
   font-size: 40px;
   color: #888888;
   font-weight: 200px;
-  line-height: 2.1;
+  line-height: 2.7;
 }
 
 .celsius {
@@ -74,7 +74,7 @@ ul {
 }
 
 .row-hours {
-  margin-top: 50px;
+  margin-top: 70px;
   margin-bottom: 20px;
 }
 
