@@ -97,7 +97,7 @@ function displayForecast(response) {
 
   forecast = response.data.list[1];
   forecastElement.innerHTML += `
-  <div class="col-xl-2">
+  <div class="col-2">
   <h5>${buildHours(forecast.dt_txt)}</h5>
   <div class="symbol">
   <img src="http://openweathermap.org/img/wn/${
@@ -113,7 +113,7 @@ function displayForecast(response) {
 
   forecast = response.data.list[2];
   forecastElement.innerHTML += `
-  <div class="col-xl-2">
+  <div class="col-2">
   <h5>${buildHours(forecast.dt_txt)}</h5>
   <div class="symbol">
   <img src="http://openweathermap.org/img/wn/${
@@ -129,7 +129,7 @@ function displayForecast(response) {
 
   forecast = response.data.list[3];
   forecastElement.innerHTML += `
-  <div class="col-xl-2">
+  <div class="col-2">
   <h5>${buildHours(forecast.dt_txt)}</h5>
   <div class="symbol">
   <img src="http://openweathermap.org/img/wn/${
@@ -145,7 +145,7 @@ function displayForecast(response) {
 
   forecast = response.data.list[4];
   forecastElement.innerHTML += `
-  <div class="col-xl-2">
+  <div class="col-2">
   <h5>${buildHours(forecast.dt_txt)}</h5>
   <div class="symbol">
   <img src="http://openweathermap.org/img/wn/${
