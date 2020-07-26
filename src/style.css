@@ -54,7 +54,7 @@ ul {
   line-height: 2;
 }
 
-.celsius {
+.units {
   position: relative;
   top: -15px;
   color: #888888;
@@ -90,4 +90,13 @@ p {
   text-align: center;
   margin-top: 10px;
   font-family: "Varela Round", sans-serif;
+}
+
+.active {
+  color: #888888;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
 }

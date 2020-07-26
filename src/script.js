@@ -32,9 +32,10 @@ let day = dayList[now.getDay()];
 
 daytime.innerHTML = `${day} ${hour}:${minutes}`;
 
-//Current temperature in Rome
+//Current temperature in Catania
 
-function dataRome(response) {
+function dataCatania(response) {
+  celsiusTemperature = response.data.main.temp;
   let gradeElement = document.querySelector("#grades");
   let humElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -50,13 +51,14 @@ function dataRome(response) {
 }
 
 apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?q=Rome&appid=e6856ff2f5d9372cd1a6c88b5d4e00fa&units=metric";
+  "https://api.openweathermap.org/data/2.5/weather?q=Catania&appid=e6856ff2f5d9372cd1a6c88b5d4e00fa&units=metric";
 
-axios.get(apiUrl).then(dataRome);
+axios.get(apiUrl).then(dataCatania);
 
 //Get current temperature from search engine
 
 function displayTemp(response) {
+  celsiusTemperature = response.data.main.temp;
   let iconElement = document.querySelector("#icon-now");
   iconElement.setAttribute(
     "src",
@@ -64,9 +66,7 @@ function displayTemp(response) {
   );
 
   document.querySelector("#newCity").innerHTML = response.data.name;
-  document.querySelector("#grades").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#grades").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
@@ -193,3 +193,34 @@ function searchLocation(position) {
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+//Get unit conversion
+
+function fahrenheitTemp(event) {
+  event.preventDefault();
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
+  let temperatureElement = document.querySelector("#grades");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function celsiusTemp(event) {
+  event.preventDefault();
+
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+
+  temperatureElement = document.querySelector("#grades");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", fahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", celsiusTemp);
+
+let celsiusTemperature = null;
