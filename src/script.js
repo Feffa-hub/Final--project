@@ -46,7 +46,7 @@ function dataCatania(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   imgElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 
@@ -62,7 +62,7 @@ function displayTemp(response) {
   let iconElement = document.querySelector("#icon-now");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
   document.querySelector("#newCity").innerHTML = response.data.name;
@@ -84,7 +84,7 @@ function displayForecast(response) {
   <div class="col-2">
   <h5>${buildHours(forecast.dt_txt)}</h5>
   <div class="symbol">
-  <img src="http://openweathermap.org/img/wn/${
+  <img src="https://openweathermap.org/img/wn/${
     forecast.weather[0].icon
   }@2x.png"width="80" />
   </div>
@@ -100,7 +100,7 @@ function displayForecast(response) {
   <div class="col-2">
   <h5>${buildHours(forecast.dt_txt)}</h5>
   <div class="symbol">
-  <img src="http://openweathermap.org/img/wn/${
+  <img src="https://openweathermap.org/img/wn/${
     forecast.weather[0].icon
   }@2x.png"width="80" />
   </div>
@@ -116,7 +116,7 @@ function displayForecast(response) {
   <div class="col-2">
   <h5>${buildHours(forecast.dt_txt)}</h5>
   <div class="symbol">
-  <img src="http://openweathermap.org/img/wn/${
+  <img src="https://openweathermap.org/img/wn/${
     forecast.weather[0].icon
   }@2x.png"width="80" />
   </div>
@@ -132,7 +132,7 @@ function displayForecast(response) {
   <div class="col-2">
   <h5>${buildHours(forecast.dt_txt)}</h5>
   <div class="symbol">
-  <img src="http://openweathermap.org/img/wn/${
+  <img src="https://openweathermap.org/img/wn/${
     forecast.weather[0].icon
   }@2x.png"width="80" />
   </div>
@@ -148,7 +148,7 @@ function displayForecast(response) {
   <div class="col-2">
   <h5>${buildHours(forecast.dt_txt)}</h5>
   <div class="symbol">
-  <img src="http://openweathermap.org/img/wn/${
+  <img src="https://openweathermap.org/img/wn/${
     forecast.weather[0].icon
   }@2x.png"width="80" />
   </div>
